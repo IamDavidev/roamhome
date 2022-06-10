@@ -65,10 +65,12 @@ export class Card extends LitElement {
         align-items:center;
         justify-content:space-between;
         gap:2rem;
+        margin:1rem 0;
       }
       .statistics__footer--price-btn {
         border:none;
         border-radius:35px;
+        font-family:var(--font--family);
         background: var(--color--red--primary);
         padding:0 .5rem;
       }
@@ -91,12 +93,7 @@ export class Card extends LitElement {
             <span class="statistics__footer--posted">Posted by ${this.posted}</span>
             <button class="statistics__footer--price-btn">
               <span>
-                ${this.price.toLocaleString('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      currencyDisplay: 'symbol'
-    })
-      }
+                ${this.price}
               </span>
             </button>
           </div>

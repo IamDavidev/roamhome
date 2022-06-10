@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 :root {
   --color--black: #000;
@@ -11,6 +11,7 @@
   --size--large: 35px;
   --size--medium: 28px;
   --size--small: 20px;
+  --font--family: 'Roboto', sans-serif;
 }
 
 body,
@@ -21,5 +22,5 @@ html {
   padding: 0;
   background-color: var(--color--white);
   color: var(--color--black);
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font--family);
 }

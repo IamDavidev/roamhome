@@ -9,21 +9,6 @@ import clients from '../../_data/clients.data';
 
 export const tagName = 'clients-layout';
 export class Clients extends LitElement {
-  static get properties() {
-    return {
-      title: { type: String },
-      count: { type: Number },
-      positonNav: { type: Array }
-    };
-  }
-
-  constructor() {
-    super();
-    this.count = 1;
-    this.positonNav = [];
-  }
-
-
   static get styles() {
     return css`
       :host {
@@ -66,41 +51,55 @@ export class Clients extends LitElement {
     `;
   }
 
-  _navBack() {
-    const card = this.shadowRoot.querySelector('card-client');
+  static get properties() {
+    return {
+      title: { type: String },
+      count: { type: Number },
+      positonNav: { type: Array },
+      cardSelected: { type: Object }
+    };
+  }
 
-    card.setAttribute('name', clients[this.count].name);
-    card.setAttribute('position', clients[this.count].position);
-    card.setAttribute('message', clients[this.count].message);
-    card.setAttribute('clientId', clients[this.count].clientId);
+  constructor() {
+    super();
+    this.count = 0;
+    this.positonNav = [];
+  }
 
+
+  positionNavHandler(position) {
     this.positonNav.map(nav => nav.classList.remove('active'));
-    this.positonNav[this.count].classList.add('active');
+    this.positonNav[position].classList.add('active');
+  }
 
+  setAttributesCard(position) {
+    this.card.setAttribute('name', clients[position].name);
+    this.card.setAttribute('position', clients[position].position);
+    this.card.setAttribute('message', clients[position].message);
+    this.card.setAttribute('clientId', clients[position].clientId);
+  }
+
+  _navBack() {
     this.count -= 1;
-
     if (this.count === -1) this.count = 4;
+
+    this.setAttributesCard(this.count);
+    this.positionNavHandler(this.count);
   }
 
   _navNext() {
-    const card = this.shadowRoot.querySelector('card-client');
-
-    card.setAttribute('name', clients[this.count].name);
-    card.setAttribute('position', clients[this.count].position);
-    card.setAttribute('message', clients[this.count].message);
-    card.setAttribute('clientId', clients[this.count].clientId);
-
-    this.positonNav.map(nav => nav.classList.remove('active'));
-    this.positonNav[this.count].classList.add('active');
-
     this.count += 1;
     if (this.count === 5) this.count = 0;
+
+    this.setAttributesCard(this.count);
+    this.positionNavHandler(this.count);
   }
 
   firstUpdated() {
     const Btns = this.shadowRoot.querySelectorAll('.nav-postion');
     this.positonNav = Array.from(Btns);
     this.positonNav[this.count].classList.add('active');
+    this.card = this.shadowRoot.querySelector('card-client');
   }
 
   render() {

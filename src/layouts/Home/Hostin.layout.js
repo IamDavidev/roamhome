@@ -19,14 +19,16 @@ export class Hosting extends LitElement {
         position: relative;
         min-height: 300px;
         padding: 1rem;
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        border-radius:1rem;
       }
       .hosting {
-        /* position:absolute;
-              top:0;
-              left:1rem;
-              width:100%;
-              z-index:6;
-              color:var(--color--white) */
+        color:var(--color--white) ;
+        position:relative;
+        z-index:6;
         margin: 20px 0;
       }
       .hosting__title {
@@ -34,7 +36,6 @@ export class Hosting extends LitElement {
         margin: 0;
       }
       .hosting__description {
-        margin: 0;
       }
       .hosting__learn-btn {
         margin-top: 10px;
@@ -42,12 +43,15 @@ export class Hosting extends LitElement {
         font-size: var(--size--small);
         font-family: "Roboto", sans-serif;
         border-radius: 5px;
-        color: var(--color--black);
+        color: var(--color--white);
         background: transparent;
-        border: 1px solid var(--color--black);
+        border: 1px solid var(--color--white);
       }
       .hosting-img {
-        width: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:3;
       }
     `;
   }
