@@ -34,7 +34,7 @@ export class Destination extends LitElement {
               color:var(--color--gray);
             }
             .destinations { 
-              margin:40px 0;
+              margin:81px 0;
               display:flex;
               flex-wrap:wrap;
               justify-content:center;
@@ -51,13 +51,23 @@ export class Destination extends LitElement {
               margin:0;
             }
             .destinations__figure img {
-              width: 100%;
+              width:100%;
               border-radius:.2rem;
               height: 100%;
             }
             .destinations__figure span {
               font-weight: bold;
-              font-size:var(--size--small);
+              font-size:25px;
+              text-align:center;
+            }
+            @media(min-width:1024px){
+              .destinations__figure:nth-child(even){
+                transform:translateY(-4rem)
+              }
+              .destinations{
+                gap:0;
+                margin-top:130px;
+              }
             }
         `;
   }
@@ -76,7 +86,7 @@ export class Destination extends LitElement {
                 </figure>
                 <figure class="destinations__figure">
                   <img src="${Himachal}" alt="Himachal" title="Himachal"/>
-                  <span>Himachal</span>
+                  <span> Himachal    Pradesh</span>
                 </figure>
                 <figure class="destinations__figure">
                   <img src="${kerala}" alt="Kerala" title="Kerala"/>

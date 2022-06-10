@@ -48,6 +48,15 @@ export class Clients extends LitElement {
         height:15px;
         border-radius:50%;
      }
+     @media (min-width:424px){
+       .container {
+         margin:115px 0;
+       }
+       .nav-clients{
+         justify-content:center;
+         gap:10px;
+       }
+     }
     `;
   }
 

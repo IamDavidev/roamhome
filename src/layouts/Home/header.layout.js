@@ -25,7 +25,16 @@ export class Header extends LitElement {
             .container {
               position: relative;
             }
-            .header,.search {
+            .header {
+              margin-bottom:6rem;
+            }
+            .header > h1 {
+              margin:0;
+              font-weight:bold;
+              font-size:var(--size--large);
+              text-align:center;
+            }
+            .search, .categories {
               background: rgba(255, 255, 255, 0.8);
               position: relative;
               z-index:6;
@@ -34,12 +43,79 @@ export class Header extends LitElement {
               margin:0;
               padding:0;
               position:absolute;
-              top:0;
+              bottom:0;
               width:100%;
               left:0;
             }
             .header-image > img {
               width:100%;
+            }
+            .search {
+              display: flex;
+              flex-direction:row;
+              justify-content:center;
+              align-items:center;
+              flex-wrap:wrap;
+              gap:21px;
+              padding:1rem 0;
+            }
+            .search__location {
+              display:flex;
+              flex-direction:column;
+              gap:4px;
+            }
+            .search__location > h4,
+            .search__date > h4,
+            .search__guests > label > div > h4  {
+              font-size:14px;
+              font-weight:bold;
+              color:var(--color--black);
+              margin:0;
+            }
+            .search__location > span,
+            .search__date > span {
+              font-size:12px;
+              color:var(--color--gray);
+              margin:0;
+            }
+            .search__location{
+              padding:0 1rem;
+              border-right:1px solid var(--color--gray);
+            }
+
+            .categories > p > span{
+              font-weight:bold;
+              font-size:14px;
+            }
+
+            .search__guests{
+              box-shadow:0 0 7px 1px var(--color--gray);
+              padding: 6px 15px;
+              border-radius:46px;
+            }
+
+            .search__guests > label {
+              display:flex;
+              flex-direction:row;
+              justify-content:center;
+              align-items:center;
+            }
+            .search__guests > label > div  > input{
+              width:100px;
+              border:none;
+            }
+            .search__guests > label > div > input:focus{
+              outline:none;
+            }
+            .btn-search {
+              border:none;
+              background: linear-gradient(to right,#D33851, #C52A66);
+              border-radius:42px;
+              display:flex;
+              flex-direction:row;
+              justify-content:center;
+              align-items:center;
+              color:var(--color--white);
             }
         `;
   }
@@ -57,20 +133,23 @@ export class Header extends LitElement {
                     <span>Where are you going?</span>
                   </div>
                   <div class="search__date">
-                    <h4>DatesCheck-In - Check-Out</h4>
+                    <h4>Check-In - Check-Out</h4>
                     <span>Add dates</span>
                   </div>
                   <div class="search__guests">
                     <label>
                       <div>
-                         <span>Guests</span>
+                         <h4>Guests</h4>
+                         <input type="text" placeholder="Add guests"/>
                       </div>
-                      <button><img src="${search}" atl="search"/> Search</button>
+                      <button class="btn-search"><img src="${search}" atl="search"/> <span>Search</span></button>
                     </label>
                   </div>
                 </div>
-                <div>
-                  <p>Categories:</p>
+                <div class="categories">
+                  <p>Categories:
+                  <span> Pet Friendly, Corporate Events, Family Vacation, Romantic Getaways</span>
+                  </p>
                 </div>
                 <figure class="header-image">
                   <img src="${header}" alt="RoadHome" title="RoadHome" class="header-image"/>

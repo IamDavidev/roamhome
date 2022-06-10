@@ -26,6 +26,11 @@ export class Home extends LitElement {
             main{
               padding:35px;
             }
+            @media (min-width:768px){
+              main{
+                padding:35px 140px;
+              }
+            }
         `;
   }
 
@@ -39,7 +44,7 @@ export class Home extends LitElement {
                 <main>
                     <destination-layout title="Chose Your Destination"></destination-layout>
                     <hosting-layout title="Try Hosting"></hosting-layout>
-                    <selection-layout title="Explore Our Selections"></selection-layout>
+                    <selection-layout title="The very best of our Selections"></selection-layout>
                     <clients-layout title="What Our Clients Say About Us" ></clients-layout>  
                   </main>
                   <footer>

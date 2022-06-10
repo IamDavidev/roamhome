@@ -16,6 +16,7 @@ export class Hosting extends LitElement {
         display: block;
       }
       .container {
+        margin:50px 0;
         position: relative;
         min-height: 300px;
         padding: 1rem;
@@ -36,6 +37,7 @@ export class Hosting extends LitElement {
         margin: 0;
       }
       .hosting__description {
+        width:30ch;
       }
       .hosting__learn-btn {
         margin-top: 10px;

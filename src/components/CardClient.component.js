@@ -40,7 +40,7 @@ export class CardClient extends LitElement {
         object-fit: cover;
       }
       .client {
-        background-color: var(--color--white);
+        background-color: #fefefe;
         clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
         display: flex;
         justify-content: center;
@@ -66,6 +66,31 @@ export class CardClient extends LitElement {
       }
       .client-message {
         font-size: 10px;
+      }
+      @media (min-width:424px) {
+        .client-image {
+          left: 40%;
+        }  
+        .client-message{
+          font-size:1rem;
+        }
+      }
+      @media (min-width:768px) {
+        .container{
+          width:425px;
+          margin: 1rem auto;
+        }
+        .client-header__name{
+          font-size:var(--size--medium);
+        }
+        .client-header__position{
+          font-size:var(--size--small);
+        }
+      }
+      @media (min-width:1024px) {
+        .container{
+          width:583px;
+        }
       }
     `;
   }

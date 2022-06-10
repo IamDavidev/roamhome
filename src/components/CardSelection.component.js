@@ -73,6 +73,29 @@ export class Card extends LitElement {
         font-family:var(--font--family);
         background: var(--color--red--primary);
         padding:0 .5rem;
+        color:var(--color--white);
+        font-size:var(--size--small)
+      }
+      @media (min-width:424px){
+        .container {
+          width:320px;
+        }
+      }
+      @media (min-width:769px){
+        .container{
+          width:440px;
+          justify-content:flex-start;
+          flex-wrap:nowrap;
+          gap:35px;
+        }
+        .statistics__footer--price-btn{
+          padding:.5rem 1rem;
+        }
+      }
+      @media (min-width:1024px){
+        .container {
+          width:510px;
+        }
       }
     `;
   }

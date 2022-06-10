@@ -26,6 +26,7 @@ export class Selection extends LitElement {
         font-size:var(--size--large);
         color:var(--color--gray);
         font-weight:bold;
+        margin:11px 0;
       }
       .selections__status{
         display:flex;
@@ -36,15 +37,24 @@ export class Selection extends LitElement {
         margin-bottom:28px;
       }
       .selections__status--description{
-        font-size:var(--size--medium);
+        font-size:var(--size--small);
         color:var(--color--gray);  
       }
       .selections__status--see-all{
         font-size:var(--size--medium);
         font-family:var(--font--family);
-        color:var(--color--red--primary);
+        color:#66101F;
         border:none;
+        font-weight:500;
         background:transparent;
+      }
+      @media (min-width:768px) {
+        .content-cards{
+          justify-content:center;
+        }
+        .container {
+          margin:122px 0
+        }
       }
     `;
   }
